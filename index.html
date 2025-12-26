@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shakhor Debnath - Frontend Developer Portfolio</title>
+    <link rel="shortcut icon" href="./generated-image.png" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -21,7 +24,7 @@
             line-height: 1.6;
         }
 
-        /* 3D Background from previous code */
+        /* 3D Background */
         #canvas-container {
             position: fixed;
             top: 0;
@@ -37,7 +40,7 @@
             top: 0;
             width: 100%;
             padding: 20px 50px;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             z-index: 1000;
             transition: all 0.3s ease;
@@ -45,7 +48,7 @@
 
         nav.scrolled {
             padding: 15px 50px;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.8);
         }
 
         nav ul {
@@ -112,12 +115,14 @@
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,255,136,0.3);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,255,136,0.4);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.4);
         }
 
         /* Sections */
@@ -159,8 +164,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         /* Skills */
@@ -171,18 +183,19 @@
         }
 
         .skill-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 40px;
             border-radius: 20px;
             text-align: center;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .skill-card:hover {
             transform: translateY(-10px);
-            background: rgba(0,255,136,0.1);
+            background: rgba(0, 255, 136, 0.1);
         }
 
         .skill-icon {
@@ -193,7 +206,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Projects */
+        /* LIVE DEMO - Projects with actual working demos */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -201,17 +214,18 @@
         }
 
         .project-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .project-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
         }
 
         .project-image {
@@ -222,6 +236,35 @@
             justify-content: center;
             font-size: 4rem;
             color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #00ff88;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         .project-content {
@@ -232,23 +275,56 @@
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .tag {
-            background: rgba(0,255,136,0.2);
+            background: rgba(0, 255, 136, 0.2);
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 500;
         }
 
-        /* Email Signatures Section */
+        /* LIVE EMAIL SIGNATURE DEMO */
         .signature-demo {
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.1);
             padding: 40px;
             border-radius: 20px;
             margin: 40px 0;
-            color: #333;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .signature-demo::before {
+            content: "🔔 LIVE CLICKABLE DEMO";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #00ff88, #00bfff);
+            color: #000;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .live-signature {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .live-signature:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 255, 136, 0.3);
         }
 
         /* Contact */
@@ -261,28 +337,37 @@
             margin-bottom: 30px;
         }
 
-        input, textarea {
+        input,
+        textarea {
             width: 100%;
             padding: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: #fff;
             font-size: 1rem;
             transition: all 0.3s ease;
+            font-family: inherit;
         }
 
-        input:focus, textarea:focus {
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        input:focus,
+        textarea:focus {
             outline: none;
             border-color: #00ff88;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 50px;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
         }
 
@@ -303,6 +388,8 @@
             justify-content: center;
             font-size: 1.5rem;
             transition: all 0.3s ease;
+            text-decoration: none;
+            color: #000;
         }
 
         .social-links a:hover {
@@ -314,17 +401,201 @@
             nav ul {
                 gap: 20px;
             }
+
             section {
                 padding: 80px 20px;
             }
+
             #about .about-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
                 text-align: center;
             }
         }
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 100px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00ff88, #00bfff, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #00ff88, #00bfff);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,255,136,0.3);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,255,136,0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, #00ff88, #00d466);
+            box-shadow: 0 10px 30px rgba(0,255,136,0.5);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 80px;
+            background: linear-gradient(45deg, #00ff88, #00bfff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ENHANCED CONTACT FORM */
+        #contact {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            margin: 50px;
+            padding: 80px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        #contactForm {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #00ff88;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #00ff88;
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 0 25px rgba(0,255,136,0.3);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 25px;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn.sending {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 15px;
+            font-weight: 500;
+            display: none;
+            animation: slideIn 0.5s ease;
+        }
+
+        .form-message.success {
+            background: rgba(0,255,136,0.2);
+            border: 2px solid #00ff88;
+            color: #00ff88;
+        }
+
+        .form-message.error {
+            background: rgba(255,107,107,0.2);
+            border: 2px solid #ff6b6b;
+            color: #ff6b6b;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { padding: 20px; flex-direction: column; gap: 20px; }
+            section { padding: 80px 20px; }
+            #contact { margin: 20px; padding: 60px 30px; }
+        }
     </style>
 </head>
+
 <body>
     <!-- 3D Background Canvas -->
     <div id="canvas-container"></div>
@@ -335,8 +606,8 @@
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#signatures">Signatures</a></li>
+            <li><a href="#projects">Live Demos</a></li>
+            <li><a href="#signatures">Email Signatures</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -346,7 +617,7 @@
         <div class="hero-content">
             <h1>Shakhor Debnath</h1>
             <p class="subtitle">Frontend Developer & Email Signature Expert</p>
-            <a href="#projects" class="btn">View My Work</a>
+            <a href="#projects" class="btn">🚀 Explore Live Demos</a>
         </div>
     </section>
 
@@ -358,154 +629,207 @@
                 <i class="fas fa-code"></i>
             </div>
             <div>
-                <h3>Frontend Developer Passionate About Pixel-Perfect Design</h3>
-                <p>I specialize in creating stunning, responsive websites and interactive email signatures for iCloud and Gmail. With expertise in modern HTML5, CSS3, JavaScript, and Three.js, I transform ideas into digital experiences that captivate users.</p>
-                <p>Specializing in <strong>clickable email signatures</strong> that drive engagement through iCloud, Gmail, and all major email clients.</p>
+                <h3>Frontend Developer Passionate About Interactive Experiences</h3>
+                <p>I create stunning, responsive websites and fully functional email signatures that work perfectly
+                    across all platforms. Specializing in modern HTML5, CSS3, JavaScript, and Three.js animations.</p>
+                <p>Hi! I’m Shakhor, a Frontend Web Developer and HTML Email Signature Expert. 🚀
+
+                    With expertise in HTML5, CSS3, JavaScript, and Bootstrap, I specialize in building responsive,
+                    user-friendly interfaces and Clickable HTML Email Signatures.
+
+                    My Services:
+
+                    Email Signatures: 100% clickable, responsive designs for Gmail, Outlook, and Apple Mail.
+
+                    Frontend Development: Pixel-perfect, modern websites.
+
+                    Clean Code: Optimized and well-documented for high performance.
+
+                    I focus on quality and customer satisfaction. Let’s collaborate to elevate your brand!</p>
+                <p>Click the <strong>"Live Demos"</strong> button above to see my interactive projects in action!</p>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
-        <h2>Skills & Technologies</h2>
+        <h2>Core Technologies</h2>
         <div class="skills-grid">
-            <div class="skill-card">
+            <div class="skill-card" onclick="showSkillDemo('html')">
                 <div class="skill-icon"><i class="fab fa-html5"></i></div>
                 <h3>HTML5</h3>
-                <p>Semantic markup & accessibility</p>
+                <p>Semantic & accessible markup</p>
             </div>
-            <div class="skill-card">
+            <div class="skill-card" onclick="showSkillDemo('css')">
                 <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
                 <h3>CSS3</h3>
-                <p>Animations, Flexbox, Grid, Tailwind</p>
+                <p>Animations & modern layouts</p>
             </div>
-            <div class="skill-card">
+            <div class="skill-card" onclick="showSkillDemo('js')">
                 <div class="skill-icon"><i class="fab fa-js-square"></i></div>
                 <h3>JavaScript</h3>
-                <p>ES6+, React, Three.js, DOM manipulation</p>
+                <p>Interactive experiences</p>
             </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
-                <h3>Responsive Design</h3>
-                <p>Mobile-first approach</p>
-            </div>
-            <div class="skill-card">
+            <div class="skill-card" onclick="showSkillDemo('email')">
                 <div class="skill-icon"><i class="fas fa-envelope"></i></div>
                 <h3>Email Signatures</h3>
-                <p>iCloud, Gmail, Outlook compatible</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fas fa-cube"></i></div>
-                <h3>3D Web</h3>
-                <p>Three.js animations</p>
+                <p>iCloud, Gmail, Outlook</p>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- LIVE PROJECT DEMOS -->
     <section id="projects">
-        <h2>Featured Projects</h2>
+        <h2>🆕 Live Interactive Demos</h2>
         <div class="projects-grid">
+            <!-- iCloud Signature Demo -->
             <div class="project-card">
                 <div class="project-image">
-                    <i class="fas fa-envelope-open"></i>
+                    <i class="fab fa-apple"></i>
+                    <span class="demo-badge">LIVE DEMO</span>
                 </div>
                 <div class="project-content">
-                    <h3>Interactive iCloud Signature</h3>
+                    <h3>📱 iCloud Signature</h3>
                     <div class="project-tags">
                         <span class="tag">HTML5</span>
                         <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Email</span>
+                        <span class="tag">Responsive</span>
+                        <span class="tag">iCloud</span>
                     </div>
-                    <p>Fully clickable email signature with social links, calendar booking, and hover animations optimized for iCloud Mail.</p>
-                    <a href="#" class="btn" style="margin-top: 20px; font-size: 0.9rem;">Live Demo</a>
+                    <p>Click below for fully functional iCloud signature demo!</p>
+                    <button class="btn" onclick="openiCloudDemo()">🖱️ Test Live Demo</button>
                 </div>
             </div>
+
+            <!-- Gmail Signature Demo -->
             <div class="project-card">
                 <div class="project-image">
                     <i class="fab fa-google"></i>
+                    <span class="demo-badge">LIVE DEMO</span>
                 </div>
                 <div class="project-content">
-                    <h3>Gmail Clickable Signature</h3>
+                    <h3>✉️ Gmail Signature</h3>
                     <div class="project-tags">
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
-                        <span class="tag">Responsive</span>
+                        <span class="tag">JavaScript</span>
                         <span class="tag">Gmail</span>
                     </div>
-                    <p>Professional Gmail signature with portfolio link, contact info, and animated call-to-action buttons.</p>
-                    <a href="#" class="btn" style="margin-top: 20px; font-size: 0.9rem;">Live Demo</a>
+                    <p>Professional, clickable Gmail signature demo</p>
+                    <button class="btn" onclick="openGmailDemo()">🖱️ Test Live Demo</button>
                 </div>
             </div>
+
+            <!-- 3D Interactive Demo -->
             <div class="project-card">
                 <div class="project-image">
-                    <i class="fas fa-globe"></i>
+                    <i class="fas fa-cube"></i>
+                    <span class="demo-badge">LIVE 3D</span>
                 </div>
                 <div class="project-content">
-                    <h3>3D Portfolio Site</h3>
+                    <h3>🎮 3D Portfolio</h3>
                     <div class="project-tags">
                         <span class="tag">Three.js</span>
                         <span class="tag">JavaScript</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">Responsive</span>
+                        <span class="tag">WebGL</span>
                     </div>
-                    <p>Interactive 3D portfolio with rotating cube background and particle effects.</p>
-                    <a href="#" class="btn" style="margin-top: 20px; font-size: 0.9rem;">View Project</a>
+                    <p>Interactive 3D background (live on this site!)</p>
+                    <button class="btn" onclick="toggle3DParticles()">🎯 Interact Now</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Email Signatures Section -->
+    <!-- LIVE EMAIL SIGNATURES -->
     <section id="signatures">
-        <h2>Clickable Email Signatures</h2>
+        <h2>✨ Real Email Signature Demos</h2>
         <div class="signature-demo">
-            <h3>Live iCloud & Gmail Signature Demo</h3>
-            <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif;">
-                <tr>
-                    <td style="padding: 20px;">
-                        <table cellpadding="0" cellspacing="0" border="0">
-                            <tr>
-                                <td style="padding-right: 15px;">
-                                    <img src="https://via.placeholder.com/80x80/00ff88/ffffff?text=SD" width="80" height="80" style="border-radius: 50%;">
-                                </td>
-                                <td>
-                                    <div style="font-size: 18px; font-weight: bold; color: #333; line-height: 1.3;">Shakhor Debnath</div>
-                                    <div style="font-size: 14px; color: #666; margin: 5px 0;">Frontend Developer</div>
-                                    <div style="font-size: 12px; color: #999; margin: 10px 0;">📧 shakhor@email.com | 📱 +880-123-456789</div>
-                                    <div style="margin: 15px 0;">
-                                        <a href="https://portfolio.com" style="color: #00ff88; text-decoration: none; font-weight: 600; margin-right: 15px;">Portfolio</a>
-                                        <a href="https://linkedin.com" style="color: #0077b5; text-decoration: none; margin-right: 15px;"><i class="fab fa-linkedin"></i></a>
-                                        <a href="https://github.com" style="color: #333; text-decoration: none;"><i class="fab fa-github"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-            <p style="margin-top: 20px; font-size: 14px; color: #666;">
-                This signature is fully clickable and works perfectly in iCloud Mail, Gmail, Outlook, and all major email clients.
-            </p>
+            <div class="live-signature" onclick="copySignature()">
+                <table cellpadding="0" cellspacing="0" border="0"
+                    style="font-family: Arial, sans-serif; max-width: 100%;">
+                    <tr>
+                        <td style="padding: 20px; vertical-align: top;">
+                            <img src="./profile.png" width="70" height="70"
+                                style="border-radius: 50%; border: 3px solid #00ff88;">
+                        </td>
+                        <td style="padding: 20px; vertical-align: top;">
+                            <div
+                                style="font-size: 20px; font-weight: bold; color: #1a1a1a; line-height: 1.3; margin-bottom: 5px;">
+                                Shakhor Debnath</div>
+                            <div style="font-size: 14px; color: #666; margin-bottom: 8px;">Frontend Developer</div>
+                            <div style="font-size: 13px; color: #888; margin-bottom: 15px;">
+                                📧 <a href="mailto:shakhordebnath5@gmail.com"
+                                    style="color: #00ff88; text-decoration: none;">shakhordebnath5@gmail.com</a><br>
+                                📱 <a href="tel:+8801310278298"
+                                    style="color: #00bfff; text-decoration: none;">+8801310278298</a>
+                            </div>
+                            <div style="display: flex; gap: 12px;">
+                                <a href="https://linkedin.com/in/shakhor"
+                                    style="color: #0077b5; font-size: 18px; margin-right: 10px;" target="_blank"><i
+                                        class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/shakhor"
+                                    style="color: #333; font-size: 18px; margin-right: 10px;" target="_blank"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="#" style="color: #e4405f; font-size: 18px;" target="_blank"><i
+                                        class="fab fa-twitter"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 20px; text-align: center; color: #666; font-size: 12px;">
+                    👆 Click anywhere to copy this signature! Works in Gmail, iCloud, Outlook
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Get In Touch</h2>
-        <form>
+        <h2>📨 Get In Touch</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto 60px; opacity: 0.9; font-size: 1.2rem;">
+            Fill out the form below and your message will be sent directly to <strong>Gmail</strong>.
+        </p>
+        
+        <form id="contactForm">
             <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
             </div>
+            
             <div class="form-group">
-                <input type="email" placeholder="Your Email" required>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
             </div>
+            
             <div class="form-group">
-                <textarea rows="6" placeholder="Your Message" required></textarea>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Project collaboration, Job opportunity, etc." required>
             </div>
-            <button type="submit" class="btn" style="width: 100%; font-size: 1.2rem;">Send Message</button>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="8" placeholder="Tell me about your project requirements, timeline, and budget..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-success submit-btn">
+                🚀 Send Message to Gmail
+            </button>
+            
+            <div id="formMessage" class="form-message"></div>
         </form>
+        
+        <div style="text-align: center; margin-top: 50px; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px;">
+            <h3>📧 Direct Email Links</h3>
+            <p style="margin-bottom: 20px; opacity: 0.8;">Or email me directly:</p>
+            <a href="mailto:shakhordebnath5@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Shakhor,%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to..." 
+               class="btn" style="margin-right: 20px; background: linear-gradient(45deg, #ea4335, #fbbc04);">
+                📧 Quick Email
+            </a>
+            <a href="https://wa.me/8801310278298?text=Hi%20Shakhor,%20I%20saw%20your%20portfolio..." 
+               class="btn" style="background: linear-gradient(45deg, #25D366, #128C7E);">
+                💬 WhatsApp
+            </a>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -513,76 +837,196 @@
         <h3>Shakhor Debnath</h3>
         <p>Frontend Developer | Email Signature Specialist</p>
         <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:shakhordebnath5@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
-        <p style="margin-top: 30px; opacity: 0.7;">© 2025 Shakhor Debnath. All rights reserved.</p>
+        <p style="margin-top: 30px; opacity: 0.7;">© 2025 Shakhor Debnath. Built with ❤️ using HTML, CSS, JS & Three.js
+        </p>
     </footer>
 
     <!-- Three.js for 3D Background -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+       
+
     <script>
-        // 3D Background (from previous conversation)
-        const scene = new THREE.Scene();
-        scene.background = null;
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('canvas-container').appendChild(renderer.domElement);
-
-        const geometry = new THREE.BoxGeometry(3, 3, 3);
-        const material = new THREE.MeshBasicMaterial({ 
-            color: 0x00ff88, 
-            wireframe: true,
-            transparent: true,
-            opacity: 0.6
-        });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 100;
-        const positions = new Float32Array(particlesCount * 3);
-        for(let i = 0; i < particlesCount * 3; i++) {
-            positions[i] = (Math.random() - 0.5) * 20;
-        }
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        const particlesMaterial = new THREE.PointsMaterial({
-            color: 0xffffff,
-            size: 0.1,
-            transparent: true,
-            opacity: 0.4
-        });
-        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particles);
-
-        camera.position.z = 5;
-
+        // 3D Interactive Background
+        let scene, camera, renderer, cube, particles, particleCount = 100;
         let mouseX = 0, mouseY = 0;
-        document.addEventListener('mousemove', (event) => {
-            mouseX = (event.clientX - window.innerWidth / 2) * 0.0005;
-            mouseY = (event.clientY - window.innerHeight / 2) * 0.0005;
-        });
+        let particlesActive = true;
+
+        function init3D() {
+            scene = new THREE.Scene();
+            scene.background = null;
+
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            // Rotating Cube
+            const geometry = new THREE.BoxGeometry(2, 2, 2);
+            const material = new THREE.MeshBasicMaterial({
+                color: 0x00ff88,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.7
+            });
+            cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
+
+            // Interactive Particles
+            const particlesGeometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            for (let i = 0; i < particleCount * 3; i++) {
+                positions[i] = (Math.random() - 0.5) * 20;
+            }
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const particlesMaterial = new THREE.PointsMaterial({
+                color: 0xffffff,
+                size: 0.15,
+                transparent: true,
+                opacity: 0.6
+            });
+            particles = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particles);
+
+            camera.position.z = 5;
+            animate();
+        }
 
         function animate() {
             requestAnimationFrame(animate);
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            cube.rotation.x += mouseY;
-            cube.rotation.y += mouseX;
-            particles.rotation.y += 0.002;
+            cube.rotation.x += 0.01 + mouseY * 0.001;
+            cube.rotation.y += 0.01 + mouseX * 0.001;
+            if (particlesActive) particles.rotation.y += 0.002;
             renderer.render(scene, camera);
         }
-        animate();
 
-        // Navigation scroll effect
+        // Mouse Interaction
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX - window.innerWidth / 2) * 0.0008;
+            mouseY = (e.clientY - window.innerHeight / 2) * 0.0008;
+        });
+
+        // LIVE DEMO FUNCTIONS
+        function openiCloudDemo() {
+            const demo = window.open('', '_blank');
+            demo.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head><title>iCloud Signature Demo</title>
+                <style>body{margin:40px;font-family:Arial;background:#f0f8ff;padding:30px;max-width:600px;}</style>
+                </head>
+                <body>
+                    <h2>✅ iCloud Mail Signature - LIVE TEST</h2>
+                    <div style="background:#fff;padding:25px;border-radius:12px;border:2px solid #00ff88;box-shadow:0 8px 25px rgba(0,0,0,0.1);">
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td style="padding-right:15px;"><img src="./image.png" width="60" height="60" style="border-radius:50%;"></td>
+                                <td>
+                                    <div style="font-size:18px;font-weight:bold;color:#1a1a1a;">Shakhor Debnath</div>
+                                    <div style="font-size:13px;color:#666;margin:5px 0;">Frontend Developer</div>
+                                    <div style="margin:12px 0;">
+                                        <a href="mailto:shakhordebnath5@gmail.com" style="color:#00ff88;font-weight:600;">📧 Email</a> | 
+                                        <a href="tel:+8801310278298" style="color:#00bfff;">📱 Call</a> | 
+                                        <a href="https://portfolio.com" style="color:#0077b5;">Portfolio</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p style="margin-top:20px;color:#666;font-size:14px;">
+                        ✅ This signature works perfectly in iCloud Mail, Gmail, and Outlook!<br>
+                        🔗 All links are fully clickable
+                    </p>
+                </body></html>
+            `);
+        }
+
+        function openGmailDemo() {
+            const demo = window.open('', '_blank');
+            demo.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head><title>Gmail Signature Demo</title>
+                <style>body{margin:40px;font-family:-apple-system;background:#fff;padding:30px;max-width:600px;}</style>
+                </head>
+                <body>
+                    <h2>✅ Gmail Signature - LIVE TEST</h2>
+                    <div style="background:#f8f9fa;padding:25px;border-radius:12px;border-left:4px solid #ea4335;box-shadow:0 8px 25px rgba(0,0,0,0.1);">
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td style="padding-right:15px;"><img src="porfile.png" width="60" height="60" style="border-radius:50%;"></td>
+                                <td>
+                                    <div style="font-size:18px;font-weight:bold;color:#1a1a1a;">Shakhor Debnath</div>
+                                    <div style="font-size:13px;color:#666;margin:5px 0;">Frontend Developer</div>
+                                    <div style="margin:12px 0;">
+                                        <a href="https://linkedin.com" style="color:#0077b5;"><i class="fab fa-linkedin"></i> LinkedIn</a> | 
+                                        <a href="https://github.com" style="color:#333;"><i class="fab fa-github"></i> GitHub</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p style="margin-top:20px;color:#666;font-size:14px;">
+                        ✅ Perfectly optimized for Gmail<br>
+                        🔗 100% clickable links & responsive
+                    </p>
+                </body></html>
+            `);
+        }
+
+        function toggle3DParticles() {
+            particlesActive = !particlesActive;
+            particles.material.opacity = particlesActive ? 0.6 : 0.1;
+            alert(particlesActive ? '✨ 3D Particles Activated!' : '😴 3D Particles Paused');
+        }
+
+        function showSkillDemo(skill) {
+            const messages = {
+                html: '🌐 HTML5 demo: Semantic structure with perfect accessibility!',
+                css: '🎨 CSS3 demo: Advanced animations and glassmorphism effects!',
+                js: '⚡ JavaScript demo: Interactive 3D background with mouse tracking!',
+                email: '📧 Email demo: Click the signature above to copy!'
+            };
+            alert(messages[skill]);
+        }
+
+        function copySignature() {
+            const signature = `Shakhor Debnath | Frontend Developer
+📧 shakhordebnath5@gmail.com | 📱 +8801310278298
+💼 Portfolio: https://yourportfolio.com | LinkedIn: linkedin.com/in/shakhor`;
+
+            navigator.clipboard.writeText(signature).then(() => {
+                // Visual feedback
+                const demo = document.querySelector('.live-signature');
+                demo.style.background = '#00ff88';
+                demo.style.color = '#000';
+                setTimeout(() => {
+                    demo.style.background = '';
+                    demo.style.color = '';
+                }, 1000);
+
+                alert('✅ Signature copied! Paste it in your email settings 🚀');
+            });
+        }
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thank you, ${name}! Your message has been sent. I'll reply within 24 hours! 🚀`);
+            this.reset();
+        });
+
+        // Navigation & Scroll Effects
         window.addEventListener('scroll', () => {
             document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Smooth scrolling
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -592,19 +1036,75 @@
             });
         });
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Initialize 3D on load
+        window.addEventListener('load', init3D);
+         // PERFECT EMAIL FUNCTIONALITY
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
-        });
+            
+            const btn = this.querySelector('.submit-btn');
+            const messageDiv = document.getElementById('formMessage');
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Show sending state
+            btn.textContent = '⏳ Opening Gmail...';
+            btn.classList.add('sending');
+            messageDiv.style.display = 'none';
+            
+            // Create perfectly formatted email
+            const emailSubject = encodeURIComponent(`Portfolio Inquiry: ${subject} from ${name}`);
+            const emailBody = encodeURIComponent(`
+Hi Shakhor,
 
-        // Resize handler
+I hope this email finds you well!
+
+My name is ${name}
+Email: ${email}
+
+${subject}
+
+${message}
+
+Looking forward to hearing from you!
+
+Best regards,
+${name}
+            `);
+            
+            // Open user's default email client DIRECTLY TO YOUR GMAIL
+            const mailtoLink = `mailto:shakhordebnath5@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Success feedback
+            setTimeout(() => {
+                btn.textContent = '✅ Message Prepared!';
+                btn.classList.remove('sending');
+                messageDiv.className = 'form-message success';
+                messageDiv.innerHTML = `
+                    <i class="fas fa-check-circle"></i> 
+                    Your email client has opened with a perfectly formatted message to 
+                    <strong>shakhordebnath5@gmail.com</strong>!<br>
+                    <small>Just click Send in your email app 🚀</small>
+                `;
+                messageDiv.style.display = 'block';
+            }, 1000);
+        });
+        // Responsive resize
         window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            if (camera && renderer) {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
         });
     </script>
 </body>
+
 </html>
